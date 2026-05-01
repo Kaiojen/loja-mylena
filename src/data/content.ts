@@ -1,0 +1,401 @@
+import type { LucideIcon } from 'lucide-react';
+import {
+  ArrowRight,
+  Heart,
+  Instagram,
+  Layers,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Palette,
+  PenTool,
+  Search,
+  Send,
+  ShoppingBag,
+  Smartphone,
+  Sparkles,
+} from 'lucide-react';
+
+import fifteenYearsImage from '../../imagens_site_my_dream/15_anos.webp';
+import baptismImage from '../../imagens_site_my_dream/batizado.webp';
+import revealTeaImage from '../../imagens_site_my_dream/cha_revelacao.webp';
+import floralLavenderImage from '../../imagens_site_my_dream/convite_floral_lavanda.webp';
+import goldLuxuryImage from '../../imagens_site_my_dream/convite_luxo_dourado.webp';
+import digitalInvitesImage from '../../imagens_site_my_dream/convites_digitais.webp';
+import kidsPartyImage from '../../imagens_site_my_dream/festa_infantil.webp';
+import heroImage from '../../imagens_site_my_dream/hero_mockup.webp';
+import classicMenuImage from '../../imagens_site_my_dream/menu_classico.webp';
+import tableSignsImage from '../../imagens_site_my_dream/menus_plaquinhas.webp';
+import weddingStationeryImage from '../../imagens_site_my_dream/papelaria_casamento.webp';
+import botanicalSaveTheDateImage from '../../imagens_site_my_dream/save_the_date_botanico.webp';
+import favorTagsImage from '../../imagens_site_my_dream/tags_lembrancinhas.webp';
+
+export const assets = {
+  hero: heroImage,
+  digitalInvites: digitalInvitesImage,
+  weddingStationery: weddingStationeryImage,
+  kidsParty: kidsPartyImage,
+  fifteenYears: fifteenYearsImage,
+  floralLavender: floralLavenderImage,
+  classicMenu: classicMenuImage,
+  botanicalSaveTheDate: botanicalSaveTheDateImage,
+  goldLuxury: goldLuxuryImage,
+  revealTea: revealTeaImage,
+  baptism: baptismImage,
+  tableSigns: tableSignsImage,
+  favorTags: favorTagsImage,
+};
+
+export const siteConfig = {
+  brand: 'My Dream',
+  descriptor: 'Artes Gráficas',
+  email: 'contato@mydream.com',
+  whatsappBaseUrl: 'https://wa.me/',
+  whatsappDefaultMessage: 'Olá, quero criar uma arte com a My Dream.',
+  instagramUrl: '#',
+  pinterestUrl: '#',
+};
+
+export const buildWhatsappUrl = (message = siteConfig.whatsappDefaultMessage) =>
+  `${siteConfig.whatsappBaseUrl}?text=${encodeURIComponent(message)}`;
+
+export const navItems = [
+  { href: '#inicio', label: 'Início' },
+  { href: '#catalogo', label: 'Catálogos' },
+  { href: '#personalizado', label: 'Personalizado' },
+  { href: '#como-funciona', label: 'Como funciona' },
+  { href: '#faq', label: 'Dúvidas' },
+  { href: '#contato', label: 'Contato' },
+];
+
+export const heroStats = [
+  { initials: 'M', tone: 'blush' },
+  { initials: 'A', tone: 'lavender' },
+  { initials: 'S', tone: 'gold' },
+];
+
+export const categories = [
+  {
+    title: 'Convites digitais',
+    description: 'Práticos para enviar direto pelo WhatsApp.',
+    image: assets.digitalInvites,
+    href: '#catalogo',
+  },
+  {
+    title: 'Papelaria casamento',
+    description: 'Identidade visual completa para o grande dia.',
+    image: assets.weddingStationery,
+    href: '#catalogo',
+  },
+  {
+    title: 'Festa infantil',
+    description: 'Temas lúdicos para os pequenos.',
+    image: assets.kidsParty,
+    href: '#catalogo',
+  },
+  {
+    title: '15 anos',
+    description: 'Modernidade e elegância para debutes.',
+    image: assets.fifteenYears,
+    href: '#catalogo',
+  },
+];
+
+export const catalogFilters = ['Todos', 'Casamento', 'Infantil', '15 anos', 'Papelaria', 'Digital', 'Floral'] as const;
+export type CatalogFilter = (typeof catalogFilters)[number];
+
+export type CatalogCollection = {
+  title: string;
+  description: string;
+  image: string;
+  filter: CatalogFilter;
+};
+
+export const catalogCollections: CatalogCollection[] = [
+  {
+    title: 'Casamento',
+    description: 'Convites, save the date, menus e detalhes coordenados.',
+    image: assets.weddingStationery,
+    filter: 'Casamento',
+  },
+  {
+    title: 'Infantil',
+    description: 'Modelos delicados para aniversários, chá revelação e batizado.',
+    image: assets.kidsParty,
+    filter: 'Infantil',
+  },
+  {
+    title: 'Papelaria',
+    description: 'Tags, plaquinhas, menus e peças para deixar a mesa completa.',
+    image: assets.tableSigns,
+    filter: 'Papelaria',
+  },
+  {
+    title: 'Digital',
+    description: 'Artes prontas para enviar pelo WhatsApp com praticidade.',
+    image: assets.digitalInvites,
+    filter: 'Digital',
+  },
+];
+
+export type Product = {
+  title: string;
+  description: string;
+  badge: string;
+  image: string;
+  price: string;
+  format: string;
+  delivery: string;
+  filters: CatalogFilter[];
+  badgeTone: 'rose' | 'lavender' | 'gold';
+};
+
+export const products: Product[] = [
+  {
+    title: 'Floral Lavanda',
+    description: 'Estilo rústico e romântico',
+    badge: 'Convite Digital',
+    image: assets.floralLavender,
+    price: 'R$ 49,90',
+    format: 'Arquivo digital',
+    delivery: 'Prévia em 3 dias',
+    filters: ['Casamento', 'Digital', 'Floral'],
+    badgeTone: 'rose',
+  },
+  {
+    title: 'Minimal Classic',
+    description: 'Elegância no minimalismo',
+    badge: 'Papelaria',
+    image: assets.classicMenu,
+    price: 'R$ 29,90',
+    format: 'Menu ou cartão',
+    delivery: 'Arte em 4 dias',
+    filters: ['Casamento', 'Papelaria'],
+    badgeTone: 'lavender',
+  },
+  {
+    title: 'Botanical Garden',
+    description: 'Folhagens e frescor',
+    badge: 'Save the Date',
+    image: assets.botanicalSaveTheDate,
+    price: 'R$ 39,90',
+    format: 'Arquivo digital',
+    delivery: 'Prévia em 3 dias',
+    filters: ['Casamento', 'Digital', 'Floral'],
+    badgeTone: 'rose',
+  },
+  {
+    title: 'Luxo Rose Gold',
+    description: 'Brilho e sofisticação',
+    badge: 'Pacote Completo',
+    image: assets.goldLuxury,
+    price: 'R$ 149,90',
+    format: 'Kit coordenado',
+    delivery: 'Arte em 5 dias',
+    filters: ['Casamento', 'Papelaria', 'Digital'],
+    badgeTone: 'lavender',
+  },
+  {
+    title: 'Chá Revelação',
+    description: 'Delicadeza para revelar esse momento',
+    badge: 'Convite Digital',
+    image: assets.revealTea,
+    price: 'R$ 49,90',
+    format: 'Arquivo digital',
+    delivery: 'Prévia em 3 dias',
+    filters: ['Infantil', 'Digital'],
+    badgeTone: 'rose',
+  },
+  {
+    title: 'Batizado Clássico',
+    description: 'Arte suave para uma celebração especial',
+    badge: 'Convite Digital',
+    image: assets.baptism,
+    price: 'R$ 44,90',
+    format: 'Arquivo digital',
+    delivery: 'Prévia em 3 dias',
+    filters: ['Infantil', 'Digital'],
+    badgeTone: 'gold',
+  },
+  {
+    title: 'Menus & Plaquinhas',
+    description: 'Peças coordenadas para a recepção',
+    badge: 'Papelaria',
+    image: assets.tableSigns,
+    price: 'R$ 69,90',
+    format: 'Kit mesa posta',
+    delivery: 'Arte em 4 dias',
+    filters: ['Casamento', 'Papelaria', 'Floral'],
+    badgeTone: 'lavender',
+  },
+  {
+    title: 'Tags Lembrancinhas',
+    description: 'Detalhes finais com identidade visual',
+    badge: 'Papelaria',
+    image: assets.favorTags,
+    price: 'R$ 24,90',
+    format: 'Tags digitais',
+    delivery: 'Arte em 3 dias',
+    filters: ['Casamento', 'Infantil', 'Papelaria'],
+    badgeTone: 'gold',
+  },
+  {
+    title: 'Festa Jardim Encantado',
+    description: 'Visual lúdico e delicado para comemorações infantis',
+    badge: 'Convite Digital',
+    image: assets.kidsParty,
+    price: 'R$ 54,90',
+    format: 'Arquivo digital',
+    delivery: 'Prévia em 3 dias',
+    filters: ['Infantil', 'Digital', 'Floral'],
+    badgeTone: 'rose',
+  },
+  {
+    title: 'Debutante Floral',
+    description: 'Composição moderna para festas de 15 anos',
+    badge: '15 anos',
+    image: assets.fifteenYears,
+    price: 'R$ 64,90',
+    format: 'Convite digital',
+    delivery: 'Prévia em 4 dias',
+    filters: ['15 anos', 'Digital', 'Floral'],
+    badgeTone: 'lavender',
+  },
+  {
+    title: 'Identidade Casamento',
+    description: 'Linha visual para convite, menu e papelaria do evento',
+    badge: 'Pacote Completo',
+    image: assets.weddingStationery,
+    price: 'R$ 189,90',
+    format: 'Kit coordenado',
+    delivery: 'Arte em 7 dias',
+    filters: ['Casamento', 'Papelaria', 'Floral'],
+    badgeTone: 'gold',
+  },
+  {
+    title: 'Convite WhatsApp',
+    description: 'Modelo direto para enviar aos convidados com elegância',
+    badge: 'Digital',
+    image: assets.digitalInvites,
+    price: 'R$ 39,90',
+    format: 'Imagem para envio',
+    delivery: 'Prévia em 2 dias',
+    filters: ['Digital', 'Infantil'],
+    badgeTone: 'rose',
+  },
+];
+
+export type CustomWork = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  tone: 'rose' | 'lavender';
+  featured?: boolean;
+};
+
+export const customWorks: CustomWork[] = [
+  {
+    title: 'Convite Único',
+    description: 'Design exclusivo para seu evento, pensado em cada detalhe.',
+    icon: PenTool,
+    tone: 'rose',
+  },
+  {
+    title: 'Identidade Visual',
+    description: 'Monogramas e paletas para padronizar toda a festa.',
+    icon: Palette,
+    tone: 'lavender',
+    featured: true,
+  },
+  {
+    title: 'Pacotes',
+    description: 'Convite, menu e tags em um estilo harmônico.',
+    icon: Layers,
+    tone: 'rose',
+  },
+];
+
+export const processSteps = [
+  {
+    title: 'Escolha',
+    description: 'Explore nosso catálogo e escolha seu favorito.',
+    icon: Search,
+  },
+  {
+    title: 'Compre',
+    description: 'Pagamento seguro e rápido via checkout.',
+    icon: ShoppingBag,
+  },
+  {
+    title: 'Dados',
+    description: 'Envie os dados do seu evento para nós.',
+    icon: Send,
+  },
+  {
+    title: 'Receba',
+    description: 'Arte final pronta para enviar aos convidados.',
+    icon: Sparkles,
+  },
+];
+
+export const testimonials = [
+  {
+    name: 'Camila',
+    initials: 'C',
+    tone: 'rose',
+    text: 'Ficou exatamente como eu imaginei. Delicado e lindo! Todos elogiaram muito.',
+  },
+  {
+    name: 'Mariana',
+    initials: 'M',
+    tone: 'lavender',
+    text: 'Atendimento humanizado e artes maravilhosas. Recomendo de olhos fechados.',
+  },
+  {
+    name: 'Amanda',
+    initials: 'A',
+    tone: 'gold',
+    text: 'O convite digital facilitou demais a confirmação de presença dos meus convidados.',
+  },
+];
+
+export const faqs = [
+  {
+    question: 'O convite é digital ou impresso?',
+    answer:
+      'Trabalhamos exclusivamente com artes digitais. Você recebe o arquivo pronto para enviar por WhatsApp ou para imprimir na gráfica de sua preferência.',
+  },
+  {
+    question: 'Quanto tempo demora para receber?',
+    answer:
+      'Para modelos prontos, entregamos a prévia em até 3 dias úteis. Projetos exclusivos podem levar de 7 a 10 dias úteis.',
+  },
+  {
+    question: 'Como é feito o pagamento?',
+    answer:
+      'Processamos pagamentos seguros via checkout externo, aceitando Pix, boleto e cartão.',
+  },
+  {
+    question: 'Posso alterar textos, cores e detalhes do modelo?',
+    answer:
+      'Sim. Os modelos do catálogo recebem personalização com os dados do evento e pequenos ajustes visuais combinados no atendimento.',
+  },
+  {
+    question: 'Vocês montam uma arte totalmente exclusiva?',
+    answer:
+      'Sim. Quando o catálogo não atende ao que você imaginou, criamos uma arte personalizada a partir do tema, referências e informações do evento.',
+  },
+];
+
+export const icons = {
+  ArrowRight,
+  Heart,
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Search,
+  ShoppingBag,
+  Smartphone,
+  Sparkles,
+};
