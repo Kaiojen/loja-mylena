@@ -50,7 +50,7 @@ function ProductCard({ product }: { product: Product }) {
             aria-label={`Comprar ${product.title} pelo WhatsApp`}
           >
             <ShoppingBag aria-hidden="true" />
-            Comprar
+            Quero este
           </a>
         </div>
       </div>
@@ -107,7 +107,7 @@ export function CatalogSection() {
         <SectionHeading
           eyebrow="Catálogos"
           title="Modelos por ocasião"
-          description="Encontre o design perfeito por tema, formato ou tipo de evento. Nós cuidamos da personalização para você."
+          description="Encontre o design perfeito por tema, formato ou tipo de evento. Ao escolher, você segue para o WhatsApp com o modelo já identificado."
           align="left"
         />
 
@@ -166,11 +166,27 @@ export function CatalogSection() {
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="product-grid">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.title} product={product} />
-            ))}
-          </div>
+          <>
+            <div className="product-grid">
+              {filteredProducts.map((product) => (
+                <ProductCard key={product.title} product={product} />
+              ))}
+            </div>
+            <div className="catalog-help">
+              <div>
+                <strong>Não achou o modelo ideal?</strong>
+                <span>A My Dream cria uma arte exclusiva a partir do tema do seu evento.</span>
+              </div>
+              <a
+                className="button button--lavender button--compact"
+                href={buildWhatsappUrl('Olá, quero uma arte personalizada com a My Dream.')}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Pedir personalizado
+              </a>
+            </div>
+          </>
         ) : (
           <div className="catalog-empty">
             <h3>Nenhum modelo encontrado</h3>

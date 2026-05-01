@@ -154,16 +154,16 @@ main {
 }
 
 .container {
-  width: min(100% - 32px, var(--container));
+  width: min(100% - 40px, var(--container));
   margin-inline: auto;
 }
 
 .container--narrow {
-  width: min(100% - 32px, var(--container-narrow));
+  width: min(100% - 40px, var(--container-narrow));
 }
 
 .container--faq {
-  width: min(100% - 32px, 760px);
+  width: min(100% - 40px, 760px);
 }
 
 .section {
@@ -286,6 +286,18 @@ main {
 @media (max-width: 760px) {
   :root {
     --header-height: 80px;
+  }
+
+  .container {
+    width: min(100% - 36px, var(--container));
+  }
+
+  .container--narrow {
+    width: min(100% - 36px, var(--container-narrow));
+  }
+
+  .container--faq {
+    width: min(100% - 36px, 760px);
   }
 
   .section {

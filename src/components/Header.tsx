@@ -1,7 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-import { navItems } from '../data/content';
+import { buildWhatsappUrl, icons, navItems } from '../data/content';
 import { Brand } from './Brand';
 
 const navLinkIds: Record<string, string> = {
@@ -14,6 +14,7 @@ const navLinkIds: Record<string, string> = {
 };
 
 export function Header() {
+  const { MessageCircle } = icons;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -40,8 +41,15 @@ export function Header() {
         </nav>
 
         <div className="site-header__actions">
-          <a id="header-cta-btn" className="button button--lavender button--compact site-header__cta" href="#catalogo">
-            Ver catálogos
+          <a
+            id="header-cta-btn"
+            className="button button--lavender button--compact site-header__cta"
+            href={buildWhatsappUrl('Olá, quero falar com a My Dream.')}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MessageCircle aria-hidden="true" />
+            WhatsApp
           </a>
           <button
             className="mobile-menu-button"
@@ -65,6 +73,15 @@ export function Header() {
           ))}
           <a className="button button--rose" href="#catalogo" onClick={closeMenu}>
             Ver catálogos
+          </a>
+          <a
+            className="button button--outline"
+            href={buildWhatsappUrl('Olá, quero falar com a My Dream.')}
+            target="_blank"
+            rel="noreferrer"
+            onClick={closeMenu}
+          >
+            Falar com atendente
           </a>
         </nav>
       </div>

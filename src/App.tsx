@@ -9,6 +9,7 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { ProcessSection } from './components/ProcessSection';
+import { ServiceNotice } from './components/ServiceNotice';
 import { TestimonialsSection } from './components/TestimonialsSection';
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Header />
         <main>
           <HeroSection />
+          <ServiceNotice />
           <CategorySection />
           <CatalogSection />
           <FeaturedProduct />

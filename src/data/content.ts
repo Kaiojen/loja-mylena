@@ -315,6 +315,35 @@ export const customWorks: CustomWork[] = [
   },
 ];
 
+export type ServiceRule = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  tone: 'rose' | 'lavender' | 'gold';
+};
+
+export const serviceRules: ServiceRule[] = [
+  {
+    title: 'Tudo 100% digital',
+    description:
+      'Não enviamos produto físico. A arte final chega pronta para WhatsApp, e-mail ou impressão por conta da cliente.',
+    icon: Smartphone,
+    tone: 'rose',
+  },
+  {
+    title: 'Prazo transparente',
+    description: 'O prazo começa após a confirmação do pagamento e o envio completo dos dados do evento.',
+    icon: Sparkles,
+    tone: 'gold',
+  },
+  {
+    title: 'Atendimento pelo WhatsApp',
+    description: 'A escolha do modelo, dúvidas e dados da personalização são alinhados diretamente com a My Dream.',
+    icon: MessageCircle,
+    tone: 'lavender',
+  },
+];
+
 export const processSteps = [
   {
     title: 'Escolha',
@@ -322,18 +351,18 @@ export const processSteps = [
     icon: Search,
   },
   {
-    title: 'Compre',
-    description: 'Pagamento seguro e rápido via checkout.',
-    icon: ShoppingBag,
+    title: 'Converse',
+    description: 'Fale com a My Dream no WhatsApp para confirmar modelo, prazo e detalhes.',
+    icon: MessageCircle,
   },
   {
     title: 'Dados',
-    description: 'Envie os dados do seu evento para nós.',
+    description: 'Envie os dados do evento depois da confirmação do pedido.',
     icon: Send,
   },
   {
     title: 'Receba',
-    description: 'Arte final pronta para enviar aos convidados.',
+    description: 'Receba a arte digital pronta para compartilhar com os convidados.',
     icon: Sparkles,
   },
 ];
@@ -373,7 +402,7 @@ export const faqs = [
   {
     question: 'Como é feito o pagamento?',
     answer:
-      'Processamos pagamentos seguros via checkout externo, aceitando Pix, boleto e cartão.',
+      'Depois da conversa e confirmação do modelo, enviamos as opções de pagamento disponíveis, como Pix ou link de pagamento.',
   },
   {
     question: 'Posso alterar textos, cores e detalhes do modelo?',
