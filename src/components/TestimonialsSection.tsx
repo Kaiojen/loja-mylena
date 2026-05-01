@@ -1,16 +1,41 @@
-import { Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { useRef } from 'react';
 
 import { testimonials } from '../data/content';
 
 export function TestimonialsSection() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollTestimonials = (direction: 'previous' | 'next') => {
+    carouselRef.current?.scrollBy({
+      left: direction === 'next' ? 360 : -360,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <section id="depoimentos" className="section testimonials-section section--white">
       <div className="container">
-        <div className="section-heading">
-          <h2>Experiências My Dream</h2>
+        <div className="testimonials-section__header">
+          <div className="section-heading section-heading--left">
+            <p className="section-heading__eyebrow">Clientes</p>
+            <h2>Experiências My Dream</h2>
+            <p className="section-heading__description">
+              Relatos curtos por tipo de evento para mostrar o que a cliente pode esperar do atendimento.
+            </p>
+          </div>
+
+          <div className="testimonial-controls" aria-label="Controle dos depoimentos">
+            <button type="button" aria-label="Depoimento anterior" onClick={() => scrollTestimonials('previous')}>
+              <ChevronLeft aria-hidden="true" />
+            </button>
+            <button type="button" aria-label="Próximo depoimento" onClick={() => scrollTestimonials('next')}>
+              <ChevronRight aria-hidden="true" />
+            </button>
+          </div>
         </div>
 
-        <div className="testimonial-grid">
+        <div className="testimonial-carousel" ref={carouselRef}>
           {testimonials.map((testimonial) => (
             <article key={testimonial.name} className="testimonial-card stripe-pattern">
               <div className="testimonial-card__stars" aria-label="5 estrelas">

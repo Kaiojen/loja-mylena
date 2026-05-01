@@ -50,9 +50,9 @@ export const siteConfig = {
   brand: 'My Dream',
   descriptor: 'Artes Gráficas',
   email: 'contato@mydream.com',
-  whatsappBaseUrl: 'https://wa.me/',
+  whatsappBaseUrl: 'https://wa.me/5521966283284',
   whatsappDefaultMessage: 'Olá, quero criar uma arte com a My Dream.',
-  instagramUrl: '#',
+  instagramUrl: 'https://www.instagram.com/mydream.designers/',
   pinterestUrl: '#',
 };
 
@@ -61,6 +61,7 @@ export const buildWhatsappUrl = (message = siteConfig.whatsappDefaultMessage) =>
 
 export const navItems = [
   { href: '#inicio', label: 'Início' },
+  { href: '#pacotes', label: 'Pacotes' },
   { href: '#catalogo', label: 'Catálogos' },
   { href: '#personalizado', label: 'Personalizado' },
   { href: '#como-funciona', label: 'Como funciona' },
@@ -135,6 +136,52 @@ export const catalogCollections: CatalogCollection[] = [
     description: 'Artes prontas para enviar pelo WhatsApp com praticidade.',
     image: assets.digitalInvites,
     filter: 'Digital',
+  },
+];
+
+export type OfferPackage = {
+  title: string;
+  price: string;
+  description: string;
+  badge: string;
+  features: string[];
+  message: string;
+  highlighted?: boolean;
+};
+
+export const offerPackages: OfferPackage[] = [
+  {
+    title: 'Convite digital simples',
+    price: 'R$ 49,90',
+    description: 'Para quem já gostou de um modelo pronto e precisa personalizar os dados do evento.',
+    badge: 'Mais pedido',
+    features: ['Modelo do catálogo personalizado', 'Arquivo pronto para WhatsApp', '1 ajuste simples incluso'],
+    message: 'Olá, quero o pacote Convite digital simples da My Dream.',
+  },
+  {
+    title: 'Convite interativo',
+    price: 'R$ 79,90',
+    description: 'Para eventos que precisam de uma experiência mais completa no envio aos convidados.',
+    badge: 'Melhor valor',
+    features: ['Botões para confirmação, local ou presente', 'Visual adaptado ao tema', 'Entrega digital organizada'],
+    message: 'Olá, quero o pacote Convite interativo da My Dream.',
+    highlighted: true,
+  },
+  {
+    title: 'Kit digital festa/casamento',
+    price: 'R$ 129,90 a R$ 189,90',
+    description: 'Para manter convite, tags, menus e detalhes do evento com a mesma identidade visual.',
+    badge: 'Kit completo',
+    features: ['Convite + peças digitais coordenadas', 'Ideal para casamento ou festa', 'Itens definidos no atendimento'],
+    message: 'Olá, quero saber mais sobre o Kit digital festa/casamento da My Dream.',
+  },
+  {
+    title: 'Personalizado do zero',
+    price: 'A partir de R$ 149,90',
+    description: 'Para quem quer uma arte exclusiva feita a partir do tema, referências e estilo do evento.',
+    badge: 'Exclusivo',
+    features: ['Criação sob medida', 'Paleta e estilo definidos no briefing', 'Prazo combinado antes do pagamento'],
+    message: 'Olá, quero uma arte personalizada do zero com a My Dream.',
   },
 ];
 
@@ -369,22 +416,79 @@ export const processSteps = [
 
 export const testimonials = [
   {
-    name: 'Camila',
+    name: 'Camila, casamento',
     initials: 'C',
     tone: 'rose',
-    text: 'Ficou exatamente como eu imaginei. Delicado e lindo! Todos elogiaram muito.',
+    text: 'Escolhi um modelo floral e ajustaram tudo com os dados da cerimônia. Ficou delicado e combinou com a identidade do casamento.',
   },
   {
-    name: 'Mariana',
+    name: 'Mariana, aniversário infantil',
     initials: 'M',
     tone: 'lavender',
-    text: 'Atendimento humanizado e artes maravilhosas. Recomendo de olhos fechados.',
+    text: 'Mandei o tema da festa e recebi uma arte bem organizada para enviar no WhatsApp. O atendimento ajudou muito nos detalhes.',
   },
   {
-    name: 'Amanda',
+    name: 'Amanda, cha revelacao',
     initials: 'A',
     tone: 'gold',
-    text: 'O convite digital facilitou demais a confirmação de presença dos meus convidados.',
+    text: 'O convite digital facilitou a confirmação dos convidados e ficou pronto dentro do prazo combinado.',
+  },
+  {
+    name: 'Juliana, batizado',
+    initials: 'J',
+    tone: 'rose',
+    text: 'Eu queria algo suave e simples. A arte veio pronta para compartilhar com a familia e ainda pude pedir um ajuste no texto.',
+  },
+  {
+    name: 'Bianca, 15 anos',
+    initials: 'B',
+    tone: 'lavender',
+    text: 'O convite ficou moderno sem perder delicadeza. Gostei porque antes de pagar já entendi prazo, valor e o que estava incluso.',
+  },
+];
+
+export type CommercialPolicy = {
+  title: string;
+  summary: string;
+  items: string[];
+};
+
+export const commercialPolicies: CommercialPolicy[] = [
+  {
+    title: 'Produto digital',
+    summary: 'A My Dream trabalha somente com artes digitais.',
+    items: [
+      'Não enviamos nenhum item físico.',
+      'A entrega é feita em arquivo digital, pronto para compartilhar ou imprimir por conta da cliente.',
+      'Cores podem variar conforme tela, celular, impressora ou gráfica escolhida.',
+    ],
+  },
+  {
+    title: 'Prazo',
+    summary: 'O prazo é combinado antes do pedido ser iniciado.',
+    items: [
+      'Modelos prontos costumam ter prévia em até 3 dias úteis.',
+      'Projetos exclusivos podem levar de 7 a 10 dias úteis.',
+      'O prazo começa após pagamento confirmado e envio completo dos dados do evento.',
+    ],
+  },
+  {
+    title: 'Alterações',
+    summary: 'Ajustes pequenos entram no processo, mudanças grandes podem virar novo orçamento.',
+    items: [
+      'Cada pacote informa o que está incluso no atendimento.',
+      'Alterações de texto, nomes e dados do evento são tratadas com prioridade.',
+      'Mudança completa de tema, paleta ou estrutura pode alterar prazo e valor.',
+    ],
+  },
+  {
+    title: 'Pagamento',
+    summary: 'A compra é finalizada pelo atendimento, com link ou Pix.',
+    items: [
+      'O pagamento é enviado depois da confirmação do pacote/modelo escolhido.',
+      'O pedido entra na fila após confirmação do pagamento.',
+      'Como se trata de arte personalizada, cancelamentos após início da criação são avaliados caso a caso.',
+    ],
   },
 ];
 

@@ -3,6 +3,15 @@ import { buildWhatsappUrl, icons, navItems, siteConfig } from '../data/content';
 
 export function Footer() {
   const { Heart, Instagram, Mail, MapPin, MessageCircle } = icons;
+  const footerNavItems = navItems.filter((item) =>
+    ['#inicio', '#pacotes', '#catalogo', '#personalizado'].includes(item.href),
+  );
+  const footerLinkIds: Record<string, string> = {
+    '#inicio': 'footer-link-home',
+    '#pacotes': 'footer-link-offers',
+    '#catalogo': 'footer-link-cat',
+    '#personalizado': 'footer-link-custom',
+  };
 
   return (
     <footer id="contato" className="site-footer">
@@ -16,14 +25,11 @@ export function Footer() {
               Celebrando momentos únicos com delicadeza e design exclusivo. Sua história começa no convite.
             </p>
             <div className="social-list" aria-label="Redes sociais">
-              <a id="footer-social-ig" href={siteConfig.instagramUrl} aria-label="Instagram">
+              <a id="footer-social-ig" href={siteConfig.instagramUrl} aria-label="Instagram" target="_blank" rel="noreferrer">
                 <Instagram aria-hidden="true" />
               </a>
               <a id="footer-social-wa" href={buildWhatsappUrl()} aria-label="WhatsApp" target="_blank" rel="noreferrer">
                 <MessageCircle aria-hidden="true" />
-              </a>
-              <a id="footer-social-pin" href={siteConfig.pinterestUrl} aria-label="Pinterest">
-                <Heart aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -31,18 +37,9 @@ export function Footer() {
           <div>
             <h3>Explorar</h3>
             <ul>
-              {navItems.slice(0, 3).map((item) => (
+              {footerNavItems.map((item) => (
                 <li key={item.href}>
-                  <a
-                    id={
-                      item.href === '#inicio'
-                        ? 'footer-link-home'
-                        : item.href === '#catalogo'
-                          ? 'footer-link-cat'
-                          : 'footer-link-custom'
-                    }
-                    href={item.href}
-                  >
+                  <a id={footerLinkIds[item.href]} href={item.href}>
                     {item.label === 'Personalizado' ? 'Artes Exclusivas' : item.label}
                   </a>
                 </li>
@@ -59,13 +56,13 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a id="footer-link-terms" href="#contato">
-                  Termos de Uso
+                <a id="footer-link-policy" href="#politica">
+                  Política Comercial
                 </a>
               </li>
               <li>
-                <a id="footer-link-privacy" href="#contato">
-                  Privacidade
+                <a id="footer-link-digital" href="#politica">
+                  Produto Digital
                 </a>
               </li>
             </ul>

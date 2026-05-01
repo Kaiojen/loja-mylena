@@ -6,6 +6,7 @@ import { Brand } from './Brand';
 
 const navLinkIds: Record<string, string> = {
   '#inicio': 'nav-home-link',
+  '#pacotes': 'nav-offers-link',
   '#catalogo': 'nav-catalog-link',
   '#personalizado': 'nav-custom-link',
   '#como-funciona': 'nav-steps-link',
