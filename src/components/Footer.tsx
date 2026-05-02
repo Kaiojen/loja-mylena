@@ -61,8 +61,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a id="footer-link-digital" href="#politica">
-                  Produto Digital
+                <a id="footer-link-privacy" href="#privacidade">
+                  Privacidade
                 </a>
               </li>
             </ul>

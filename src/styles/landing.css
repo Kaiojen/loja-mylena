@@ -1619,6 +1619,56 @@ a:hover .brand__name {
   content: '';
 }
 
+.privacy-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(169, 140, 199, 0.18);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.privacy-summary strong {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(81, 73, 109, 0.9);
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.privacy-summary p {
+  max-width: 690px;
+  margin: 0;
+  color: rgba(81, 73, 109, 0.66);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.privacy-summary__button {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 10px 14px;
+  border: 1px solid rgba(199, 127, 160, 0.24);
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-rose);
+  font-size: 0.78rem;
+  font-weight: 900;
+  transition:
+    background 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.privacy-summary__button:hover {
+  background: var(--color-rose);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
 .faq-list {
   display: grid;
   gap: 14px;
@@ -1856,6 +1906,100 @@ a:hover .brand__name {
   color: rgba(199, 127, 160, 0.55);
 }
 
+.privacy-notice {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 80;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  width: min(calc(100% - 40px), 760px);
+  margin-inline: auto;
+  padding: 14px 16px;
+  border: 1px solid rgba(169, 140, 199, 0.24);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 48px rgba(81, 73, 109, 0.16);
+  backdrop-filter: blur(14px);
+}
+
+.privacy-notice__icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(169, 140, 199, 0.14);
+  color: var(--color-lavender);
+}
+
+.privacy-notice__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.privacy-notice__content {
+  min-width: 0;
+}
+
+.privacy-notice__content strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--color-purple-gray);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.privacy-notice__content p {
+  margin: 0;
+  color: rgba(81, 73, 109, 0.66);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.privacy-notice__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.privacy-notice__actions a,
+.privacy-notice__actions button {
+  min-height: 38px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.privacy-notice__actions a {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 4px;
+  color: rgba(81, 73, 109, 0.62);
+}
+
+.privacy-notice__actions a:hover {
+  color: var(--color-rose);
+}
+
+.privacy-notice__actions button {
+  padding: 9px 16px;
+  border: 0;
+  background: var(--color-purple-gray);
+  color: var(--color-white);
+  transition:
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.privacy-notice__actions button:hover {
+  background: var(--color-rose);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 1100px) {
   .site-header__nav {
     display: none;
@@ -2028,6 +2172,15 @@ a:hover .brand__name {
     flex: 0 0 auto;
   }
 
+  .privacy-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .privacy-summary__button {
+    align-self: flex-start;
+  }
+
   .section-heading--left {
     text-align: center;
   }
@@ -2087,6 +2240,23 @@ a:hover .brand__name {
   .site-footer__bottom {
     flex-direction: column;
     text-align: center;
+  }
+
+  .privacy-notice {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 10px;
+    width: min(calc(100% - 28px), 760px);
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .privacy-notice__icon {
+    display: none;
+  }
+
+  .privacy-notice__actions {
+    justify-content: flex-end;
   }
 }
 
@@ -2150,6 +2320,7 @@ a:hover .brand__name {
   .testimonial-card,
   .offer-card,
   .policy-panel,
+  .privacy-summary,
   .catalog-help,
   .custom-section__cta {
     border-radius: 24px;
@@ -2173,6 +2344,17 @@ a:hover .brand__name {
 
   .filter-button {
     flex-basis: 100%;
+  }
+
+  .privacy-notice {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: calc(100% - 24px);
+  }
+
+  .privacy-notice__actions {
+    justify-content: space-between;
   }
 }
 

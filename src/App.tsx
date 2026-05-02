@@ -11,6 +11,7 @@ import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { OfferSection } from './components/OfferSection';
 import { ProcessSection } from './components/ProcessSection';
+import { PrivacyNotice } from './components/PrivacyNotice';
 import { ServiceNotice } from './components/ServiceNotice';
 import { TestimonialsSection } from './components/TestimonialsSection';
 
@@ -38,6 +39,7 @@ export default function App() {
           <FinalCta />
         </main>
         <Footer />
+        <PrivacyNotice />
       </div>
     </>
   );

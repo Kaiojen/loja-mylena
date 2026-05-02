@@ -428,7 +428,7 @@ export const testimonials = [
     text: 'Mandei o tema da festa e recebi uma arte bem organizada para enviar no WhatsApp. O atendimento ajudou muito nos detalhes.',
   },
   {
-    name: 'Amanda, cha revelacao',
+    name: 'Amanda, chá revelação',
     initials: 'A',
     tone: 'gold',
     text: 'O convite digital facilitou a confirmação dos convidados e ficou pronto dentro do prazo combinado.',
@@ -437,7 +437,7 @@ export const testimonials = [
     name: 'Juliana, batizado',
     initials: 'J',
     tone: 'rose',
-    text: 'Eu queria algo suave e simples. A arte veio pronta para compartilhar com a familia e ainda pude pedir um ajuste no texto.',
+    text: 'Eu queria algo suave e simples. A arte veio pronta para compartilhar com a família e ainda pude pedir um ajuste no texto.',
   },
   {
     name: 'Bianca, 15 anos',
@@ -488,6 +488,15 @@ export const commercialPolicies: CommercialPolicy[] = [
       'O pagamento é enviado depois da confirmação do pacote/modelo escolhido.',
       'O pedido entra na fila após confirmação do pagamento.',
       'Como se trata de arte personalizada, cancelamentos após início da criação são avaliados caso a caso.',
+    ],
+  },
+  {
+    title: 'Privacidade',
+    summary: 'Usamos dados mínimos para atendimento, personalização e medição dos anúncios.',
+    items: [
+      'As informações enviadas pela cliente no WhatsApp são usadas para criar, ajustar e entregar a arte digital solicitada.',
+      'A medição da Meta ajuda a entender visitas, cliques e desempenho das campanhas para melhorar os anúncios.',
+      'A cliente pode chamar no WhatsApp para tirar dúvidas sobre dados do pedido, atendimento e entrega.',
     ],
   },
 ];
