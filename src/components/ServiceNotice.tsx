@@ -1,4 +1,5 @@
 import { buildWhatsappUrl, icons, serviceRules } from '../data/content';
+import { trackWhatsAppClick } from '../utils/pixel';
 
 export function ServiceNotice() {
   const { MessageCircle, Sparkles } = icons;
@@ -43,6 +44,7 @@ export function ServiceNotice() {
               href={buildWhatsappUrl('Olá, quero tirar uma dúvida antes de fazer meu pedido na My Dream.')}
               target="_blank"
               rel="noreferrer"
+              onClick={trackWhatsAppClick}
             >
               <MessageCircle aria-hidden="true" />
               Falar com atendente

@@ -1,4 +1,5 @@
 import { assets, buildWhatsappUrl, icons } from '../data/content';
+import { trackWhatsAppClick } from '../utils/pixel';
 
 export function FeaturedProduct() {
   const { MessageCircle, ShoppingBag } = icons;
@@ -34,6 +35,7 @@ export function FeaturedProduct() {
                 href={buildWhatsappUrl('Olá, quero comprar o modelo Floral Lavanda da My Dream.')}
                 target="_blank"
                 rel="noreferrer"
+                onClick={trackWhatsAppClick}
               >
                 <ShoppingBag aria-hidden="true" />
                 Comprar agora
@@ -43,6 +45,7 @@ export function FeaturedProduct() {
                 href={buildWhatsappUrl('Olá, quero falar sobre o modelo Floral Lavanda.')}
                 target="_blank"
                 rel="noreferrer"
+                onClick={trackWhatsAppClick}
               >
                 <MessageCircle aria-hidden="true" />
                 WhatsApp

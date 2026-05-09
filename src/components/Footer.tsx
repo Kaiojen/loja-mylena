@@ -1,5 +1,6 @@
 import { Brand } from './Brand';
 import { buildWhatsappUrl, icons, navItems, siteConfig } from '../data/content';
+import { trackWhatsAppClick } from '../utils/pixel';
 
 export function Footer() {
   const { Heart, Instagram, Mail, MapPin, MessageCircle } = icons;
@@ -28,7 +29,7 @@ export function Footer() {
               <a id="footer-social-ig" href={siteConfig.instagramUrl} aria-label="Instagram" target="_blank" rel="noreferrer">
                 <Instagram aria-hidden="true" />
               </a>
-              <a id="footer-social-wa" href={buildWhatsappUrl()} aria-label="WhatsApp" target="_blank" rel="noreferrer">
+              <a id="footer-social-wa" href={buildWhatsappUrl()} aria-label="WhatsApp" target="_blank" rel="noreferrer" onClick={trackWhatsAppClick}>
                 <MessageCircle aria-hidden="true" />
               </a>
             </div>
@@ -79,7 +80,7 @@ export function Footer() {
                 <MapPin aria-hidden="true" />
                 Atendimento Online
               </span>
-              <a id="footer-link-wa-btn" className="footer-whatsapp" href={buildWhatsappUrl()} target="_blank" rel="noreferrer">
+              <a id="footer-link-wa-btn" className="footer-whatsapp" href={buildWhatsappUrl()} target="_blank" rel="noreferrer" onClick={trackWhatsAppClick}>
                 <MessageCircle aria-hidden="true" />
                 Chamar Agora
               </a>
