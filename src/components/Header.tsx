@@ -2,6 +2,7 @@ import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 import { buildWhatsappUrl, icons, navItems } from '../data/content';
+import { trackWhatsAppClick } from '../utils/pixel';
 import { Brand } from './Brand';
 
 const navLinkIds: Record<string, string> = {
@@ -48,6 +49,7 @@ export function Header() {
             href={buildWhatsappUrl('Olá, quero falar com a My Dream.')}
             target="_blank"
             rel="noreferrer"
+            onClick={trackWhatsAppClick}
           >
             <MessageCircle aria-hidden="true" />
             WhatsApp
@@ -80,7 +82,7 @@ export function Header() {
             href={buildWhatsappUrl('Olá, quero falar com a My Dream.')}
             target="_blank"
             rel="noreferrer"
-            onClick={closeMenu}
+            onClick={() => { closeMenu(); trackWhatsAppClick(); }}
           >
             Falar com atendente
           </a>

@@ -1,4 +1,5 @@
 import { buildWhatsappUrl, icons, offerPackages } from '../data/content';
+import { trackWhatsAppClick } from '../utils/pixel';
 import { SectionHeading } from './SectionHeading';
 
 export function OfferSection() {
@@ -38,6 +39,7 @@ export function OfferSection() {
                 href={buildWhatsappUrl(item.message)}
                 target="_blank"
                 rel="noreferrer"
+                onClick={trackWhatsAppClick}
               >
                 <MessageCircle aria-hidden="true" />
                 Quero esse pacote

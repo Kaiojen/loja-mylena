@@ -1,4 +1,5 @@
 import { buildWhatsappUrl, customWorks, icons } from '../data/content';
+import { trackWhatsAppClick } from '../utils/pixel';
 import { SectionHeading } from './SectionHeading';
 
 export function CustomWorkSection() {
@@ -39,6 +40,7 @@ export function CustomWorkSection() {
             href={buildWhatsappUrl('Olá, quero pedir uma arte personalizada do zero.')}
             target="_blank"
             rel="noreferrer"
+            onClick={trackWhatsAppClick}
           >
             <MessageCircle aria-hidden="true" />
             Quero meu personalizado

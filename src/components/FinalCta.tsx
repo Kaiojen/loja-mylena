@@ -1,4 +1,5 @@
 import { buildWhatsappUrl, icons } from '../data/content';
+import { trackWhatsAppClick } from '../utils/pixel';
 
 export function FinalCta() {
   const { MessageCircle, Sparkles } = icons;
@@ -16,6 +17,7 @@ export function FinalCta() {
             href={buildWhatsappUrl('Olá, quero fazer meu pedido com a My Dream.')}
             target="_blank"
             rel="noreferrer"
+            onClick={trackWhatsAppClick}
           >
             <MessageCircle aria-hidden="true" />
             Falar no WhatsApp

@@ -9,6 +9,7 @@ import {
   type CatalogFilter,
   type Product,
 } from '../data/content';
+import { trackWhatsAppClick } from '../utils/pixel';
 import { SectionHeading } from './SectionHeading';
 
 function ProductCard({ product }: { product: Product }) {
@@ -48,6 +49,7 @@ function ProductCard({ product }: { product: Product }) {
             target="_blank"
             rel="noreferrer"
             aria-label={`Comprar ${product.title} pelo WhatsApp`}
+            onClick={trackWhatsAppClick}
           >
             <ShoppingBag aria-hidden="true" />
             Quero este
@@ -182,6 +184,7 @@ export function CatalogSection() {
                 href={buildWhatsappUrl('Olá, quero uma arte personalizada com a My Dream.')}
                 target="_blank"
                 rel="noreferrer"
+                onClick={trackWhatsAppClick}
               >
                 Pedir personalizado
               </a>
