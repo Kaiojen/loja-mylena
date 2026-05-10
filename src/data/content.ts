@@ -50,7 +50,7 @@ export const siteConfig = {
   brand: 'My Dream',
   descriptor: 'Artes Gráficas',
   email: 'contato@mydream.com',
-  whatsappBaseUrl: 'https://wa.me/5521966283284',
+  whatsappBaseUrl: 'https://wa.me/5521971111988',
   whatsappDefaultMessage: 'Olá, quero criar uma arte com a My Dream.',
   instagramUrl: 'https://www.instagram.com/mydream.designers/',
   pinterestUrl: '#',
