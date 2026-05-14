@@ -19,36 +19,36 @@ export function FeaturedProduct() {
           </div>
 
           <div className="featured-product__content">
-            <span className="mini-badge">Convite Digital Interativo</span>
+            <span className="mini-badge">Convite Interativo de Casamento</span>
             <h2>Floral Lavanda</h2>
             <p className="featured-product__price">
-              R$ 59,90 <span>R$ 89,90</span>
+              R$ 79,90
             </p>
             <p className="featured-product__description">
-              Um design romântico e delicado, com botões interativos para RSVP e lista de presentes.
-              Entrega em até 3 dias úteis.
+              Design romântico e delicado com RSVP digital, localização da cerimônia e link para lista de presentes.
+              Seus convidados confirmam com um clique. Entrega em até 3 dias úteis.
             </p>
 
             <div className="featured-product__actions">
               <a
                 className="button button--rose"
-                href={buildWhatsappUrl('Olá, quero comprar o modelo Floral Lavanda da My Dream.')}
+                href={buildWhatsappUrl('Olá, quero o Convite Interativo Floral Lavanda de casamento da My Dream.')}
                 target="_blank"
                 rel="noreferrer"
                 onClick={trackWhatsAppClick}
               >
                 <ShoppingBag aria-hidden="true" />
-                Comprar agora
+                Quero este convite
               </a>
               <a
                 className="button button--whatsapp"
-                href={buildWhatsappUrl('Olá, quero falar sobre o modelo Floral Lavanda.')}
+                href={buildWhatsappUrl('Olá, quero tirar dúvidas sobre o convite Floral Lavanda.')}
                 target="_blank"
                 rel="noreferrer"
                 onClick={trackWhatsAppClick}
               >
                 <MessageCircle aria-hidden="true" />
-                WhatsApp
+                Tirar dúvidas
               </a>
             </div>
           </div>

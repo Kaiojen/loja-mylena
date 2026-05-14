@@ -107,9 +107,9 @@ export function CatalogSection() {
     <section id="catalogo" className="section catalog-section">
       <div className="container">
         <SectionHeading
-          eyebrow="Catálogos"
-          title="Modelos por ocasião"
-          description="Encontre o design perfeito por tema, formato ou tipo de evento. Ao escolher, você segue para o WhatsApp com o modelo já identificado."
+          eyebrow="Catálogos de casamento"
+          title="Modelos para o seu grande dia"
+          description="Escolha por tema ou formato. Ao selecionar, você segue para o WhatsApp com o modelo já identificado — sem ruído, só decisão."
           align="left"
         />
 

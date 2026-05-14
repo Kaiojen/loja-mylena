@@ -9,7 +9,7 @@ export function CategorySection() {
   return (
     <section id="categorias" className="section categories-section section--white">
       <div className="container">
-        <SectionHeading eyebrow="Nosso Portfólio" title="Escolha o tipo de arte ideal" />
+        <SectionHeading eyebrow="Para o seu casamento" title="Tudo que a noiva precisa, do convite ao agradecimento" />
 
         <div className="category-grid">
           {categories.map((category, index) => (
