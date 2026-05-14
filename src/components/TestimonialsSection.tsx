@@ -18,10 +18,10 @@ export function TestimonialsSection() {
       <div className="container">
         <div className="testimonials-section__header">
           <div className="section-heading section-heading--left">
-            <p className="section-heading__eyebrow">Clientes</p>
-            <h2>Experiências My Dream</h2>
+            <p className="section-heading__eyebrow">Noivas My Dream</p>
+            <h2>O que as noivas dizem</h2>
             <p className="section-heading__description">
-              Relatos curtos por tipo de evento para mostrar o que a cliente pode esperar do atendimento.
+              Relatos de noivas que passaram pelo processo — do primeiro contato até o dia do casamento.
             </p>
           </div>
 

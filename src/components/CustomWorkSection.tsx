@@ -9,8 +9,8 @@ export function CustomWorkSection() {
     <section id="personalizado" className="section custom-section">
       <div className="container">
         <SectionHeading
-          title="Artes exclusivas"
-          description="Se não encontrou o que buscava, nós criamos do zero seguindo o seu sonho."
+          title="Identidade visual exclusiva para o seu casamento"
+          description="Quando o catálogo não traduz a sua visão, criamos do zero. Você orienta, nós desenhamos cada detalhe junto com você."
         />
 
         <div className="custom-grid">
@@ -32,18 +32,18 @@ export function CustomWorkSection() {
 
         <div className="custom-section__cta">
           <div>
-            <h3>Quer uma arte feita do zero?</h3>
-            <p>Conte o tema, a data e a ideia principal. A My Dream orienta o melhor formato pelo WhatsApp.</p>
+            <h3>Pronta para criar sua identidade de casamento?</h3>
+            <p>Conta a data, o estilo e suas referências. A gente orienta o melhor caminho pelo WhatsApp — você não escolhe sozinha.</p>
           </div>
           <a
             className="button button--rose"
-            href={buildWhatsappUrl('Olá, quero pedir uma arte personalizada do zero.')}
+            href={buildWhatsappUrl('Olá, quero criar uma identidade visual exclusiva para o meu casamento com a My Dream.')}
             target="_blank"
             rel="noreferrer"
             onClick={trackWhatsAppClick}
           >
             <MessageCircle aria-hidden="true" />
-            Quero meu personalizado
+            Começar meu projeto
           </a>
         </div>
       </div>

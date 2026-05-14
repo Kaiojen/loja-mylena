@@ -13,10 +13,9 @@ export function ServiceNotice() {
               <Sparkles aria-hidden="true" />
               Antes de pedir
             </span>
-            <h2>Artes digitais, atendimento humano e prazo combinado</h2>
+            <h2>Atendimento consultivo com a noiva, prazo claro e ajustes até o sim</h2>
             <p>
-              Cada pedido é alinhado no WhatsApp para evitar erro nos dados do evento e deixar a entrega clara desde
-              o início.
+              Cada convite de casamento é alinhado no WhatsApp — dados da cerimônia, estilo e detalhes — para que você receba exatamente o que imaginou.
             </p>
           </div>
 
@@ -41,7 +40,7 @@ export function ServiceNotice() {
           <div className="service-notice__actions">
             <a
               className="button button--rose"
-              href={buildWhatsappUrl('Olá, quero tirar uma dúvida antes de fazer meu pedido na My Dream.')}
+              href={buildWhatsappUrl('Olá, quero tirar uma dúvida sobre o convite do meu casamento na My Dream.')}
               target="_blank"
               rel="noreferrer"
               onClick={trackWhatsAppClick}
@@ -50,7 +49,7 @@ export function ServiceNotice() {
               Falar com atendente
             </a>
             <a className="button button--outline" href="#personalizado">
-              Quero meu personalizado
+              Quero identidade exclusiva
             </a>
           </div>
         </article>

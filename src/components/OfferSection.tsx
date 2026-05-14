@@ -9,9 +9,9 @@ export function OfferSection() {
     <section id="pacotes" className="section offer-section section--white">
       <div className="container">
         <SectionHeading
-          eyebrow="Pacotes"
-          title="Escolha pelo momento do seu evento"
-          description="Os valores ajudam a cliente a entender o que está incluso antes de falar no WhatsApp. O atendimento confirma o melhor pacote para cada pedido."
+          eyebrow="Pacotes de casamento"
+          title="Três caminhos para o convite perfeito"
+          description="Cada degrau tem uma proposta clara. O atendimento confirma o melhor pacote para o seu casamento antes de qualquer pagamento."
         />
 
         <div className="offer-grid">

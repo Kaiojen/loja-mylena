@@ -23,7 +23,7 @@ export function Footer() {
               <Brand align="left" />
             </a>
             <p className="site-footer__summary">
-              Celebrando momentos únicos com delicadeza e design exclusivo. Sua história começa no convite.
+              Especialistas em convites digitais e papelaria para casamentos. Sua história, do save the date ao agradecimento.
             </p>
             <div className="social-list" aria-label="Redes sociais">
               <a id="footer-social-ig" href={siteConfig.instagramUrl} aria-label="Instagram" target="_blank" rel="noreferrer">
