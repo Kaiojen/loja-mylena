@@ -109,7 +109,7 @@ export function CatalogSection() {
         <SectionHeading
           eyebrow="Catálogos de casamento"
           title="Modelos para o seu grande dia"
-          description="Escolha por tema ou formato. Ao selecionar, você segue para o WhatsApp com o modelo já identificado — sem ruído, só decisão."
+          description="Modelos a partir de R$ 39,90. Escolha por tema ou formato — ao selecionar, você segue para o WhatsApp com o modelo já identificado, sem ruído, só decisão."
           align="left"
         />
 
