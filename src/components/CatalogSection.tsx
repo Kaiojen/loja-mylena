@@ -13,8 +13,8 @@ import { trackWhatsAppClick } from '../utils/pixel';
 import { SectionHeading } from './SectionHeading';
 
 function ProductCard({ product }: { product: Product }) {
-  const { ShoppingBag } = icons;
-  const message = `Olá, quero comprar o modelo ${product.title} da My Dream.`;
+  const { MessageCircle } = icons;
+  const message = `Olá, quero personalizar o modelo ${product.title} da My Dream.`;
 
   return (
     <article className="product-card">
@@ -48,11 +48,11 @@ function ProductCard({ product }: { product: Product }) {
             href={buildWhatsappUrl(message)}
             target="_blank"
             rel="noreferrer"
-            aria-label={`Comprar ${product.title} pelo WhatsApp`}
+            aria-label={`Personalizar ${product.title} pelo WhatsApp`}
             onClick={trackWhatsAppClick}
           >
-            <ShoppingBag aria-hidden="true" />
-            Quero este
+            <MessageCircle aria-hidden="true" />
+            Personalizar no WhatsApp
           </a>
         </div>
       </div>
@@ -60,11 +60,51 @@ function ProductCard({ product }: { product: Product }) {
   );
 }
 
+function CatalogGroup({
+  title,
+  description,
+  price,
+  subtype,
+  items,
+}: {
+  title: string;
+  description: string;
+  price: string;
+  subtype: 'digital' | 'interativo';
+  items: Product[];
+}) {
+  const { Smartphone, Sparkles } = icons;
+  const Icon = subtype === 'interativo' ? Sparkles : Smartphone;
+
+  return (
+    <div className="catalog-group">
+      <header className="catalog-group__header">
+        <div className="catalog-group__info">
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+        <div className="catalog-group__meta">
+          <span className={`catalog-group__type-badge catalog-group__type-badge--${subtype}`}>
+            <Icon aria-hidden="true" />
+            {subtype === 'interativo' ? 'Com botões clicáveis' : 'Somente arte'}
+          </span>
+          <span className="catalog-group__price">{price}</span>
+        </div>
+      </header>
+      <div className="product-grid">
+        {items.map((product) => (
+          <ProductCard key={product.title} product={product} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const normalizeText = (value: string) =>
   value
     .toLocaleLowerCase('pt-BR')
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
+    .replace(/[̀-ͯ]/g, '');
 
 export function CatalogSection() {
   const { Search } = icons;
@@ -98,6 +138,11 @@ export function CatalogSection() {
     });
   }, [activeFilter, query]);
 
+  const digitalProducts = useMemo(() => filteredProducts.filter((p) => p.subtype === 'digital'), [filteredProducts]);
+  const interativoProducts = useMemo(() => filteredProducts.filter((p) => p.subtype === 'interativo'), [filteredProducts]);
+  const generalProducts = useMemo(() => filteredProducts.filter((p) => !p.subtype), [filteredProducts]);
+  const hasConviteGroups = digitalProducts.length > 0 || interativoProducts.length > 0;
+
   const clearFilters = () => {
     setActiveFilter('Todos');
     setQuery('');
@@ -109,7 +154,7 @@ export function CatalogSection() {
         <SectionHeading
           eyebrow="Catálogos de casamento"
           title="Modelos para o seu grande dia"
-          description="Modelos a partir de R$ 39,90. Escolha por tema ou formato — ao selecionar, você segue para o WhatsApp com o modelo já identificado, sem ruído, só decisão."
+          description="Modelos a partir de R$ 49,90. Escolha por tema ou formato — ao selecionar, você segue para o WhatsApp com o modelo já identificado, sem ruído, só decisão."
           align="left"
         />
 
@@ -117,9 +162,7 @@ export function CatalogSection() {
           {catalogCollections.map((collection) => (
             <button
               key={collection.title}
-              className={`catalog-collection ${
-                activeFilter === collection.filter ? 'catalog-collection--active' : ''
-              }`}
+              className={`catalog-collection ${activeFilter === collection.filter ? 'catalog-collection--active' : ''}`}
               type="button"
               aria-pressed={activeFilter === collection.filter}
               onClick={() => setActiveFilter(collection.filter)}
@@ -169,11 +212,50 @@ export function CatalogSection() {
 
         {filteredProducts.length > 0 ? (
           <>
-            <div className="product-grid">
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.title} product={product} />
-              ))}
-            </div>
+            {hasConviteGroups ? (
+              <div className="catalog-groups">
+                {digitalProducts.length > 0 && (
+                  <CatalogGroup
+                    title="Convites Digitais"
+                    description="Arte personalizada com data, horário, endereço e todos os dados do evento"
+                    price="R$ 49,90"
+                    subtype="digital"
+                    items={digitalProducts}
+                  />
+                )}
+
+                {digitalProducts.length > 0 && interativoProducts.length > 0 && (
+                  <div className="catalog-divider" role="separator">
+                    <span className="catalog-divider__text">Convites Interativos</span>
+                  </div>
+                )}
+
+                {interativoProducts.length > 0 && (
+                  <CatalogGroup
+                    title="Convites Interativos"
+                    description="Arte + link com RSVP digital, localização no mapa e lista de presentes"
+                    price="R$ 79,90"
+                    subtype="interativo"
+                    items={interativoProducts}
+                  />
+                )}
+
+                {generalProducts.length > 0 && (
+                  <div className="product-grid">
+                    {generalProducts.map((product) => (
+                      <ProductCard key={product.title} product={product} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="product-grid">
+                {filteredProducts.map((product) => (
+                  <ProductCard key={product.title} product={product} />
+                ))}
+              </div>
+            )}
+
             <div className="catalog-help">
               <div>
                 <strong>Não achou o modelo ideal?</strong>
