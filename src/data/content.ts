@@ -77,8 +77,8 @@ export const heroStats = [
 
 export const categories = [
   {
-    title: 'Convite Interativo',
-    description: 'RSVP digital, localização e lista de presentes em um link elegante.',
+    title: 'Convites Digitais',
+    description: 'Do modelo simples com data e endereço ao convite com RSVP, localização e lista de presentes.',
     image: assets.digitalInvites,
     href: '#pacotes',
   },
@@ -491,6 +491,11 @@ export const commercialPolicies: CommercialPolicy[] = [
 ];
 
 export const faqs = [
+  {
+    question: 'Qual a diferença entre o Convite Tradicional e o Convite Interativo?',
+    answer:
+      'O Convite Tradicional é uma arte digital caprichada com data, horário, endereço e todos os dados do evento — ideal para quem quer algo bonito e direto para compartilhar no WhatsApp. O Convite Interativo vai além: além da arte, entrega um link com RSVP digital (confirmação de presença com um clique), localização no mapa e link para a lista de presentes.',
+  },
   {
     question: 'Como funciona o convite digital de casamento?',
     answer:
