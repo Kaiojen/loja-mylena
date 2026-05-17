@@ -10,7 +10,7 @@ export function OfferSection() {
       <div className="container">
         <SectionHeading
           eyebrow="Pacotes de casamento"
-          title="Três caminhos para o convite perfeito"
+          title="Quatro caminhos para o convite perfeito"
           description="Cada degrau tem uma proposta clara. O atendimento confirma o melhor pacote para o seu casamento antes de qualquer pagamento."
         />
 
