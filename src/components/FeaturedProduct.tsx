@@ -21,8 +21,9 @@ export function FeaturedProduct() {
           <div className="featured-product__content">
             <span className="mini-badge">Convite Interativo de Casamento</span>
             <h2>Floral Lavanda</h2>
-            <p className="featured-product__price">
-              R$ 79,90
+            <p className="featured-product__price">R$ 79,90</p>
+            <p className="featured-product__alt-price">
+              Também disponível em versão tradicional (somente arte, sem RSVP) por <strong>R$ 49,90</strong>.
             </p>
             <p className="featured-product__description">
               Design romântico e delicado com RSVP digital, localização da cerimônia e link para lista de presentes.

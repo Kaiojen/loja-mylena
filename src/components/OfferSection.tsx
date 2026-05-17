@@ -11,7 +11,7 @@ export function OfferSection() {
         <SectionHeading
           eyebrow="Pacotes de casamento"
           title="Quatro caminhos para o convite perfeito"
-          description="Cada degrau tem uma proposta clara. O atendimento confirma o melhor pacote para o seu casamento antes de qualquer pagamento."
+          description="De R$ 49,90 a R$ 249,90 — cada degrau tem uma proposta clara. O atendimento confirma o melhor pacote para o seu casamento antes de qualquer pagamento."
         />
 
         <div className="offer-grid">
