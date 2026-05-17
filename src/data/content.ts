@@ -151,6 +151,14 @@ export type OfferPackage = {
 
 export const offerPackages: OfferPackage[] = [
   {
+    title: 'Convite Tradicional',
+    price: 'R$ 49,90',
+    description: 'Para quem quer uma arte linda e caprichada para compartilhar, sem precisar de RSVP ou funcionalidades extras.',
+    badge: 'Mais acessível',
+    features: ['Arte digital com data, horário e endereço', 'Modelo personalizado do catálogo', 'Entrega em até 2 dias úteis'],
+    message: 'Olá, quero o Convite Tradicional da My Dream.',
+  },
+  {
     title: 'Convite Interativo',
     price: 'R$ 79,90',
     description: 'Para a noiva que escolheu um modelo do catálogo e quer uma experiência completa para os convidados.',
