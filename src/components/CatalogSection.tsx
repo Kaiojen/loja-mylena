@@ -60,6 +60,13 @@ function ProductCard({ product }: { product: Product }) {
   );
 }
 
+const groupLabels: Record<string, string> = {
+  interativo: 'Com botões clicáveis',
+  digital: 'Somente arte',
+  kit: 'Kit coordenado',
+  outras: 'Outras ocasiões',
+};
+
 function CatalogGroup({
   title,
   description,
@@ -69,15 +76,16 @@ function CatalogGroup({
 }: {
   title: string;
   description: string;
-  price: string;
-  subtype: 'digital' | 'interativo';
+  price?: string;
+  subtype: 'digital' | 'interativo' | 'kit' | 'outras';
   items: Product[];
 }) {
-  const { Smartphone, Sparkles } = icons;
-  const Icon = subtype === 'interativo' ? Sparkles : Smartphone;
+  const { Heart, Layers, Smartphone, Sparkles } = icons;
+  const Icon =
+    subtype === 'interativo' ? Sparkles : subtype === 'kit' ? Layers : subtype === 'outras' ? Heart : Smartphone;
 
   return (
-    <div className="catalog-group">
+    <div className={`catalog-group${subtype === 'outras' ? ' catalog-group--outras' : ''}`}>
       <header className="catalog-group__header">
         <div className="catalog-group__info">
           <h3>{title}</h3>
@@ -86,9 +94,9 @@ function CatalogGroup({
         <div className="catalog-group__meta">
           <span className={`catalog-group__type-badge catalog-group__type-badge--${subtype}`}>
             <Icon aria-hidden="true" />
-            {subtype === 'interativo' ? 'Com botões clicáveis' : 'Somente arte'}
+            {groupLabels[subtype]}
           </span>
-          <span className="catalog-group__price">{price}</span>
+          {price && <span className="catalog-group__price">{price}</span>}
         </div>
       </header>
       <div className="product-grid">
@@ -140,8 +148,11 @@ export function CatalogSection() {
 
   const digitalProducts = useMemo(() => filteredProducts.filter((p) => p.subtype === 'digital'), [filteredProducts]);
   const interativoProducts = useMemo(() => filteredProducts.filter((p) => p.subtype === 'interativo'), [filteredProducts]);
-  const generalProducts = useMemo(() => filteredProducts.filter((p) => !p.subtype), [filteredProducts]);
-  const hasConviteGroups = digitalProducts.length > 0 || interativoProducts.length > 0;
+  const kitProducts = useMemo(() => filteredProducts.filter((p) => p.subtype === 'kit'), [filteredProducts]);
+  const outrasProducts = useMemo(() => filteredProducts.filter((p) => p.subtype === 'outras'), [filteredProducts]);
+
+  const hasAnyGroup =
+    digitalProducts.length > 0 || interativoProducts.length > 0 || kitProducts.length > 0 || outrasProducts.length > 0;
 
   const clearFilters = () => {
     setActiveFilter('Todos');
@@ -212,7 +223,7 @@ export function CatalogSection() {
 
         {filteredProducts.length > 0 ? (
           <>
-            {hasConviteGroups ? (
+            {hasAnyGroup && (
               <div className="catalog-groups">
                 {digitalProducts.length > 0 && (
                   <CatalogGroup
@@ -240,19 +251,34 @@ export function CatalogSection() {
                   />
                 )}
 
-                {generalProducts.length > 0 && (
-                  <div className="product-grid">
-                    {generalProducts.map((product) => (
-                      <ProductCard key={product.title} product={product} />
-                    ))}
-                  </div>
+                {kitProducts.length > 0 && (
+                  <>
+                    <div className="catalog-divider" role="separator">
+                      <span className="catalog-divider__text">Kit Completo & Papelaria</span>
+                    </div>
+                    <CatalogGroup
+                      title="Kit Completo & Papelaria"
+                      description="Identidade visual coordenada — convite, save the date, menus, tags e papelaria de mesa"
+                      price="A partir de R$ 39,90"
+                      subtype="kit"
+                      items={kitProducts}
+                    />
+                  </>
                 )}
-              </div>
-            ) : (
-              <div className="product-grid">
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.title} product={product} />
-                ))}
+
+                {outrasProducts.length > 0 && (
+                  <>
+                    <div className="catalog-divider" role="separator">
+                      <span className="catalog-divider__text">Outras Ocasiões</span>
+                    </div>
+                    <CatalogGroup
+                      title="Outras Ocasiões"
+                      description="Chá revelação, batizado, 15 anos e festas infantis — a mesma qualidade para cada celebração"
+                      subtype="outras"
+                      items={outrasProducts}
+                    />
+                  </>
+                )}
               </div>
             )}
 

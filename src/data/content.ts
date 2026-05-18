@@ -226,7 +226,7 @@ export type Product = {
   delivery: string;
   filters: CatalogFilter[];
   badgeTone: 'rose' | 'lavender' | 'gold';
-  subtype?: 'digital' | 'interativo';
+  subtype?: 'digital' | 'interativo' | 'kit' | 'outras';
 };
 
 export const products: Product[] = [
@@ -420,6 +420,7 @@ export const products: Product[] = [
     delivery: 'Arte em 5 dias',
     filters: ['Casamento', 'Papelaria', 'Digital'],
     badgeTone: 'gold',
+    subtype: 'kit',
   },
   {
     title: 'Identidade Casamento',
@@ -431,6 +432,7 @@ export const products: Product[] = [
     delivery: 'Arte em 5 dias',
     filters: ['Casamento', 'Papelaria', 'Floral'],
     badgeTone: 'lavender',
+    subtype: 'kit',
   },
   {
     title: 'Menus & Plaquinhas',
@@ -442,6 +444,7 @@ export const products: Product[] = [
     delivery: 'Arte em 4 dias',
     filters: ['Casamento', 'Papelaria', 'Floral'],
     badgeTone: 'lavender',
+    subtype: 'kit',
   },
   {
     title: 'Tags Lembrancinhas',
@@ -453,6 +456,7 @@ export const products: Product[] = [
     delivery: 'Arte em 3 dias',
     filters: ['Casamento', 'Papelaria'],
     badgeTone: 'gold',
+    subtype: 'kit',
   },
   {
     title: 'Minimal Classic',
@@ -464,6 +468,7 @@ export const products: Product[] = [
     delivery: 'Arte em 3 dias',
     filters: ['Casamento', 'Papelaria'],
     badgeTone: 'lavender',
+    subtype: 'kit',
   },
   {
     title: 'Chá Revelação',
@@ -475,6 +480,7 @@ export const products: Product[] = [
     delivery: 'Prévia em 3 dias',
     filters: ['Infantil', 'Digital'],
     badgeTone: 'rose',
+    subtype: 'outras',
   },
   {
     title: 'Batizado Clássico',
@@ -486,6 +492,7 @@ export const products: Product[] = [
     delivery: 'Prévia em 3 dias',
     filters: ['Infantil', 'Digital'],
     badgeTone: 'gold',
+    subtype: 'outras',
   },
   {
     title: 'Debutante Floral',
@@ -497,6 +504,7 @@ export const products: Product[] = [
     delivery: 'Prévia em 2 dias',
     filters: ['15 anos', 'Digital', 'Floral'],
     badgeTone: 'lavender',
+    subtype: 'outras',
   },
   {
     title: 'Festa Jardim Encantado',
@@ -508,6 +516,7 @@ export const products: Product[] = [
     delivery: 'Prévia em 3 dias',
     filters: ['Infantil', 'Digital', 'Floral'],
     badgeTone: 'rose',
+    subtype: 'outras',
   },
 ];
 
@@ -722,6 +731,7 @@ export const icons = {
   ArrowRight,
   Heart,
   Instagram,
+  Layers,
   Mail,
   MapPin,
   MessageCircle,

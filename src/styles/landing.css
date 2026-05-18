@@ -1237,6 +1237,30 @@ a:hover .brand__name {
   color: var(--color-lavender);
 }
 
+.catalog-group__type-badge--kit {
+  background: rgba(185, 154, 99, 0.12);
+  color: var(--color-gold);
+}
+
+.catalog-group__type-badge--outras {
+  background: rgba(199, 127, 160, 0.08);
+  color: var(--color-rose);
+}
+
+.catalog-group--outras {
+  padding: 28px;
+  border: 1.5px dashed rgba(199, 127, 160, 0.35);
+  border-radius: var(--radius-lg);
+  background: rgba(253, 245, 248, 0.55);
+}
+
+.catalog-group--outras .catalog-group__header {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0 0 4px;
+}
+
 .catalog-group__type-badge svg {
   width: 13px;
   height: 13px;
