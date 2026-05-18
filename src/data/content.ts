@@ -30,21 +30,21 @@ import weddingStationeryImage from '../../imagens_site_my_dream/papelaria_casame
 import botanicalSaveTheDateImage from '../../imagens_site_my_dream/save_the_date_botanico.webp';
 import favorTagsImage from '../../imagens_site_my_dream/tags_lembrancinhas.webp';
 
-import conviteMinimalistaModernoImage from '../../imagens_site_my_dream/convite_minimalista_moderno.jpeg';
-import conviteFlorLineartImage from '../../imagens_site_my_dream/convite_floral_lineart.jpeg';
-import conviteFolhagensTerracotaImage from '../../imagens_site_my_dream/convite_folhagens_terracota.jpeg';
-import conviteLavandaAquarelaImage from '../../imagens_site_my_dream/convite_lavanda_aquarela.jpeg';
-import conviteVerdeRosaFloralImage from '../../imagens_site_my_dream/convite_verde_rosa_floral.jpeg';
-import conviteFlorRomanticoImage from '../../imagens_site_my_dream/convite_floral_romantico.jpeg';
-import convitePampasMarsalaImage from '../../imagens_site_my_dream/convite_pampas_marsala.jpeg';
-import conviteEucaliptoPuroImage from '../../imagens_site_my_dream/convite_eucalipto_puro.jpeg';
-import conviteBotanicoEleganteImage from '../../imagens_site_my_dream/convite_botanico_elegante.jpeg';
-import conviteDouradoRefinadoImage from '../../imagens_site_my_dream/convite_dourado_refinado.jpeg';
-import conviteGreeneryClassicoImage from '../../imagens_site_my_dream/convite_greenery_classico.jpeg';
-import conviteBohoTerrosoImage from '../../imagens_site_my_dream/convite_boho_terroso.jpeg';
-import conviteOutonoFloralImage from '../../imagens_site_my_dream/convite_outono_floral.jpeg';
-import conviteVerdeOuroImage from '../../imagens_site_my_dream/convite_verde_ouro.jpeg';
-import conviteCerejeiraRosaImage from '../../imagens_site_my_dream/convite_cerejeira_rosa.jpeg';
+import conviteMinimalistaModernoImage from '../../imagens_site_my_dream/convite_minimalista_moderno.webp';
+import conviteFlorLineartImage from '../../imagens_site_my_dream/convite_floral_lineart.webp';
+import conviteFolhagensTerracotaImage from '../../imagens_site_my_dream/convite_folhagens_terracota.webp';
+import conviteLavandaAquarelaImage from '../../imagens_site_my_dream/convite_lavanda_aquarela.webp';
+import conviteVerdeRosaFloralImage from '../../imagens_site_my_dream/convite_verde_rosa_floral.webp';
+import conviteFlorRomanticoImage from '../../imagens_site_my_dream/convite_floral_romantico.webp';
+import convitePampasMarsalaImage from '../../imagens_site_my_dream/convite_pampas_marsala.webp';
+import conviteEucaliptoPuroImage from '../../imagens_site_my_dream/convite_eucalipto_puro.webp';
+import conviteBotanicoEleganteImage from '../../imagens_site_my_dream/convite_botanico_elegante.webp';
+import conviteDouradoRefinadoImage from '../../imagens_site_my_dream/convite_dourado_refinado.webp';
+import conviteGreeneryClassicoImage from '../../imagens_site_my_dream/convite_greenery_classico.webp';
+import conviteBohoTerrosoImage from '../../imagens_site_my_dream/convite_boho_terroso.webp';
+import conviteOutonoFloralImage from '../../imagens_site_my_dream/convite_outono_floral.webp';
+import conviteVerdeOuroImage from '../../imagens_site_my_dream/convite_verde_ouro.webp';
+import conviteCerejeiraRosaImage from '../../imagens_site_my_dream/convite_cerejeira_rosa.webp';
 
 export const assets = {
   hero: heroImage,
@@ -104,33 +104,6 @@ export const heroStats = [
   { initials: 'M', tone: 'blush' },
   { initials: 'A', tone: 'lavender' },
   { initials: 'S', tone: 'gold' },
-];
-
-export const categories = [
-  {
-    title: 'Convites Digitais',
-    description: 'Do modelo simples com data e endereço ao convite com RSVP, localização e lista de presentes.',
-    image: assets.digitalInvites,
-    href: '#pacotes',
-  },
-  {
-    title: 'Kit Casamento Completo',
-    description: 'Save the date, convite, menus, tags e agradecimento na mesma identidade.',
-    image: assets.weddingStationery,
-    href: '#pacotes',
-  },
-  {
-    title: 'Papelaria para Mesa',
-    description: 'Menus, plaquinhas e tags que completam a decoração do grande dia.',
-    image: assets.tableSigns,
-    href: '#catalogo',
-  },
-  {
-    title: 'Outras Ocasiões',
-    description: 'Chá revelação, batizado, 15 anos e festa infantil.',
-    image: assets.kidsParty,
-    href: '#catalogo',
-  },
 ];
 
 export const catalogFilters = ['Todos', 'Casamento', 'Infantil', '15 anos', 'Papelaria', 'Digital', 'Floral'] as const;

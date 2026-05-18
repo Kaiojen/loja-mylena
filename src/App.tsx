@@ -1,11 +1,11 @@
 import { CatalogSection } from './components/CatalogSection';
-import { CategorySection } from './components/CategorySection';
 import { CommercialPolicySection } from './components/CommercialPolicySection';
 import { CustomWorkSection } from './components/CustomWorkSection';
 import { DecorativeBackground } from './components/DecorativeBackground';
 import { FaqSection } from './components/FaqSection';
 import { FeaturedProduct } from './components/FeaturedProduct';
 import { FinalCta } from './components/FinalCta';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
@@ -27,10 +27,9 @@ export default function App() {
         <main>
           <HeroSection />
           <ServiceNotice />
-          <CategorySection />
-          <OfferSection />
-          <CatalogSection />
           <FeaturedProduct />
+          <CatalogSection />
+          <OfferSection />
           <CustomWorkSection />
           <ProcessSection />
           <TestimonialsSection />
@@ -40,6 +39,7 @@ export default function App() {
         </main>
         <Footer />
         <PrivacyNotice />
+        <FloatingWhatsApp />
       </div>
     </>
   );

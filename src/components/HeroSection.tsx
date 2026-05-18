@@ -22,6 +22,10 @@ export function HeroSection() {
             consultivo com a noiva e ajustes até você dizer sim ao convite.
           </p>
 
+          <p className="hero__trust-pill">
+            A partir de <strong>R$ 49,90</strong> · Entrega em <strong>2 dias úteis</strong>
+          </p>
+
           <div className="hero__actions">
             <a id="hero-primary-cta" className="button button--rose" href="#catalogo">
               Ver modelos de casamento

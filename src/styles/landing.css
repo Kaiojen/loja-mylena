@@ -341,10 +341,29 @@ a:hover .brand__name {
 
 .hero__description {
   max-width: 600px;
-  margin: 26px 0 38px;
+  margin: 26px 0 18px;
   color: rgba(81, 73, 109, 0.8);
   font-size: clamp(1rem, 1.5vw, 1.22rem);
   line-height: 1.8;
+}
+
+.hero__trust-pill {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 26px;
+  padding: 8px 16px;
+  border: 1px solid rgba(185, 154, 99, 0.28);
+  border-radius: 999px;
+  background: rgba(248, 239, 229, 0.85);
+  color: var(--color-purple-gray);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.hero__trust-pill strong {
+  color: var(--color-gold);
+  font-weight: 800;
 }
 
 .hero__actions {
@@ -645,11 +664,17 @@ a:hover .brand__name {
 }
 
 .category-card__image img,
-.product-card__image img,
 .featured-product__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   transition: transform 700ms ease;
 }
 
@@ -1035,10 +1060,13 @@ a:hover .brand__name {
 
 .product-card__image {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4.2;
   overflow: hidden;
   border-radius: 24px;
   background: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-card__badge {
@@ -1135,11 +1163,11 @@ a:hover .brand__name {
 
 .buy-link {
   display: inline-flex;
-  min-height: 40px;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 10px 16px;
+  padding: 12px 18px;
   border-radius: 999px;
   background: rgba(199, 127, 160, 0.12);
   color: var(--color-rose);
@@ -2425,6 +2453,11 @@ a:hover .brand__name {
 
   .catalog-group__meta {
     flex-shrink: 1;
+    flex-wrap: wrap;
+  }
+
+  .catalog-group--outras {
+    padding: 18px;
   }
 }
 
@@ -2523,6 +2556,54 @@ a:hover .brand__name {
 
   .privacy-notice__actions {
     justify-content: space-between;
+  }
+
+  .catalog-group--outras {
+    padding: 14px;
+  }
+
+  .section {
+    padding-block: 56px;
+  }
+
+  .hero {
+    padding-top: 28px;
+    padding-bottom: 56px;
+  }
+}
+
+.floating-whatsapp {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.92rem;
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(37, 211, 102, 0.55);
+}
+
+.floating-whatsapp svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 760px) {
+  .floating-whatsapp {
+    display: inline-flex;
   }
 }
 

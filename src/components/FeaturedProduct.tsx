@@ -23,7 +23,7 @@ export function FeaturedProduct() {
             <h2>Verde & Ouro</h2>
             <p className="featured-product__price">R$ 79,90</p>
             <p className="featured-product__alt-price">
-              Também disponível em versão tradicional (somente arte, sem RSVP) por <strong>R$ 49,90</strong>.
+              Versão tradicional (somente arte, sem RSVP) por <strong>R$ 49,90</strong> — peça no WhatsApp.
             </p>
             <p className="featured-product__description">
               Eucalipto aquarelado com moldura dourada e dois botões interativos: confirmar presença e sugestão de presente.
@@ -40,16 +40,6 @@ export function FeaturedProduct() {
               >
                 <MessageCircle aria-hidden="true" />
                 Personalizar no WhatsApp
-              </a>
-              <a
-                className="button button--whatsapp"
-                href={buildWhatsappUrl('Olá, quero tirar dúvidas sobre o convite Verde & Ouro.')}
-                target="_blank"
-                rel="noreferrer"
-                onClick={trackWhatsAppClick}
-              >
-                <MessageCircle aria-hidden="true" />
-                Tirar dúvidas
               </a>
             </div>
           </div>
