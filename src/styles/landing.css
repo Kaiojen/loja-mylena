@@ -2393,6 +2393,15 @@ a:hover .brand__name {
   .privacy-notice__actions {
     justify-content: flex-end;
   }
+
+  .catalog-group__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .catalog-group__meta {
+    flex-shrink: 1;
+  }
 }
 
 @media (max-width: 480px) {

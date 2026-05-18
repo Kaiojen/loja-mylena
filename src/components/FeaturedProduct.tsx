@@ -10,7 +10,7 @@ export function FeaturedProduct() {
         <article className="featured-product stripe-pattern">
           <div className="featured-product__image">
             <img
-              src={assets.botanicalSaveTheDate}
+              src={assets.conviteVerdeOuro}
               alt="Modelo Verde & Ouro em destaque"
               loading="lazy"
               decoding="async"
