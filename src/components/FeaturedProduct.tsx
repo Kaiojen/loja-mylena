@@ -21,9 +21,12 @@ export function FeaturedProduct() {
           <div className="featured-product__content">
             <span className="mini-badge">Convite Interativo de Casamento</span>
             <h2>Verde & Ouro</h2>
-            <p className="featured-product__price">R$ 79,90</p>
+            <p className="featured-product__price">
+              <s className="featured-product__original-price">R$ 79,90</s>
+              R$ 60,00
+            </p>
             <p className="featured-product__alt-price">
-              Versão tradicional (somente arte, sem RSVP) por <strong>R$ 49,90</strong> — peça no WhatsApp.
+              Versão tradicional (sem RSVP): <s>R$ 49,90</s> por <strong>R$ 35,00</strong> — promoção até 12/06.
             </p>
             <p className="featured-product__description">
               Eucalipto aquarelado com moldura dourada e dois botões interativos: confirmar presença e sugestão de presente.
@@ -33,7 +36,7 @@ export function FeaturedProduct() {
             <div className="featured-product__actions">
               <a
                 className="button button--rose"
-                href={buildWhatsappUrl('Olá, quero personalizar o Convite Interativo Verde & Ouro da My Dream.')}
+                href={buildWhatsappUrl('Olá! Vi a promoção de Dia dos Namorados e quero personalizar o Convite Interativo Verde & Ouro por R$60,00. Pode me ajudar?')}
                 target="_blank"
                 rel="noreferrer"
                 onClick={trackWhatsAppClick}

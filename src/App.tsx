@@ -12,6 +12,7 @@ import { HeroSection } from './components/HeroSection';
 import { OfferSection } from './components/OfferSection';
 import { ProcessSection } from './components/ProcessSection';
 import { PrivacyNotice } from './components/PrivacyNotice';
+import { PromoBanner } from './components/PromoBanner';
 import { ServiceNotice } from './components/ServiceNotice';
 import { TestimonialsSection } from './components/TestimonialsSection';
 
@@ -25,6 +26,7 @@ export default function App() {
         </a>
         <Header />
         <main>
+          <PromoBanner />
           <HeroSection />
           <ServiceNotice />
           <FeaturedProduct />

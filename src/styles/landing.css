@@ -2607,6 +2607,89 @@ a:hover .brand__name {
   }
 }
 
+/* ── Promo Banner ────────────────────────────────── */
+.promo-banner {
+  background: linear-gradient(90deg, #b5689a 0%, #d48fb0 50%, #b5689a 100%);
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.promo-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+.promo-banner__text {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.promo-banner__text strong {
+  font-weight: 800;
+}
+
+.promo-banner__deadline {
+  opacity: 0.9;
+}
+
+.promo-banner__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #b5689a;
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 180ms ease;
+  flex-shrink: 0;
+}
+
+.promo-banner__cta:hover {
+  background: #fff;
+}
+
+@media (max-width: 480px) {
+  .promo-banner {
+    padding: 8px 14px;
+  }
+
+  .promo-banner__text {
+    font-size: 0.8rem;
+  }
+
+  .promo-banner__deadline {
+    display: none;
+  }
+}
+
+/* ── Promo price strikethrough ───────────────────── */
+.offer-card__original-price {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-muted, #a89bb5);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+  font-weight: 400;
+}
+
+.featured-product__original-price {
+  font-size: 0.9rem;
+  color: var(--color-muted, #a89bb5);
+  text-decoration: line-through;
+  margin-right: 6px;
+  font-weight: 400;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

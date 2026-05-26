@@ -11,7 +11,7 @@ export function OfferSection() {
         <SectionHeading
           eyebrow="Pacotes de casamento"
           title="Quatro caminhos para o convite perfeito"
-          description="De R$ 49,90 a R$ 249,90 — cada degrau tem uma proposta clara. O atendimento confirma o melhor pacote para o seu casamento antes de qualquer pagamento."
+          description="Promoção Dia dos Namorados: Tradicional por R$&nbsp;35 e Interativo por R$&nbsp;60 até 12/06. O atendimento confirma o melhor pacote antes de qualquer pagamento."
         />
 
         <div className="offer-grid">
@@ -26,6 +26,9 @@ export function OfferSection() {
                 <p>{item.description}</p>
               </div>
 
+              {item.originalPrice && (
+                <s className="offer-card__original-price">{item.originalPrice}</s>
+              )}
               <strong className="offer-card__price">{item.price}</strong>
 
               <ul className="offer-card__features">

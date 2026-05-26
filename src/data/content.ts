@@ -82,7 +82,7 @@ export const siteConfig = {
   descriptor: 'Artes Gráficas',
   email: 'contato@mydream.com',
   whatsappBaseUrl: 'https://wa.me/5521971111988',
-  whatsappDefaultMessage: 'Olá, quero criar o convite do meu casamento com a My Dream.',
+  whatsappDefaultMessage: 'Olá! Vi a promoção de Dia dos Namorados da My Dream e quero saber mais sobre os convites.',
   instagramUrl: 'https://www.instagram.com/mydream.designers/',
   pinterestUrl: '#',
 };
@@ -146,6 +146,7 @@ export const catalogCollections: CatalogCollection[] = [
 export type OfferPackage = {
   title: string;
   price: string;
+  originalPrice?: string;
   description: string;
   badge: string;
   features: string[];
@@ -156,19 +157,21 @@ export type OfferPackage = {
 export const offerPackages: OfferPackage[] = [
   {
     title: 'Convite Tradicional',
-    price: 'R$ 49,90',
+    price: 'R$ 35,00',
+    originalPrice: 'R$ 49,90',
     description: 'Para quem quer uma arte linda e caprichada para compartilhar, sem precisar de RSVP ou funcionalidades extras.',
-    badge: 'Mais acessível',
+    badge: 'Promoção Dia dos Namorados',
     features: ['Arte digital com data, horário e endereço', 'Modelo personalizado do catálogo', 'Entrega em até 2 dias úteis'],
-    message: 'Olá, quero o Convite Tradicional da My Dream.',
+    message: 'Olá! Vi a promoção de Dia dos Namorados e quero o Convite Tradicional por R$35,00. Pode me ajudar?',
   },
   {
     title: 'Convite Interativo',
-    price: 'R$ 79,90',
+    price: 'R$ 60,00',
+    originalPrice: 'R$ 79,90',
     description: 'Para a noiva que escolheu um modelo do catálogo e quer uma experiência completa para os convidados.',
-    badge: 'Entrada perfeita',
+    badge: 'Promoção Dia dos Namorados',
     features: ['Modelo personalizado com os dados do casamento', 'RSVP digital, localização e lista de presentes', 'Entrega em até 3 dias úteis'],
-    message: 'Olá, quero o Convite Interativo de casamento da My Dream.',
+    message: 'Olá! Vi a promoção de Dia dos Namorados e quero o Convite Interativo por R$60,00. Pode me ajudar?',
   },
   {
     title: 'Kit Casamento Completo',
